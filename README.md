@@ -104,7 +104,7 @@ GROUP BY category;
 4. **AVERAGE AGE OF THE CUSTOMERS WHO HAVE PURCHASED THE ITEMS FROM THE 'beauty' CATEGORY.**:
 ```sql
 SELECT  
-	category,
+    category,
     round(AVG(age),2) As average_age
 FROM retail_sales
 WHERE category = 'beauty';
@@ -118,8 +118,8 @@ WHERE total_sale > 1000;
 
 6. **TOTAL NUMBER OF TRANSASCTION MADE BY THE EACH GENDER IN EACH CATEGORY .**:
 ```sql
-SELECT  
-	category,
+SELECT
+    category,
     gender ,
     count(*) AS Total_transactoins
 FROM retail_sales
@@ -130,25 +130,25 @@ ORDER BY category ;
 7. **CALCULATE THE AVERAGE SALE FOR EACH MONTH AND ALSO FIND THE BEST SELLING MONTH OF THE YEAR**:
 ```sql
 SELECT * FROM
-	(
+(
     SELECT 
-		YEAR(sale_date) AS YEAR,
-		MONTHNAME(sale_date) AS MONTH,
-		round(AVG(total_sale),2) AS avg_sale,
-		RANK() OVER (PARTITION BY YEAR(sale_date) 
-		ORDER BY AVG(total_sale) DESC) 
-		    AS RANK_NO
-	FROM retail_sales
-	GROUP BY YEAR,MONTH
-    )
-     AS table1
+	YEAR(sale_date) AS YEAR,
+	MONTHNAME(sale_date) AS MONTH,
+	round(AVG(total_sale),2) AS avg_sale,
+	RANK() OVER (PARTITION BY YEAR(sale_date) 
+	ORDER BY AVG(total_sale) DESC) 
+	 AS RANK_NO
+   FROM retail_sales
+   GROUP BY YEAR,MONTH
+)
+AS table1
 WHERE RANK_NO = 1 ;
 ```
 
 8. **A SQL QUERY TO FIND THE TOP 5 CUSTOMERS BASED ON THE HIGHEST TOTAL SALES**:
 ```sql
 SELECT 
-	customer_id,
+    customer_id,
     sum(total_Sale) AS Total_Sale	
 FROM  retail_sales
 GROUP BY customer_id 
