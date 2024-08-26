@@ -82,8 +82,7 @@ WHERE sale_date = '2022-12-16';
 
 2. **ALL THE TRANSACTIONS WHERE CATEGORY IS CLOTHING AND THE QUANTITY SOLD IS >=3 FOR THE MONTH OF MAY-2022**.:
 ```sql
-SELECT * 
-FROM retail_sales
+SELECT * FROM retail_sales
 WHERE 
     category = 'Clothing'
     AND quantity >= 3
@@ -94,7 +93,7 @@ WHERE
 3. ** CALCULATING THE TOTAL SALES (total_sale) AND TOTAL ORDERS FOR EACH CATEGORY.**:
 ```sql
 SELECT  
-	category,
+    category,
     sum(total_sale) AS Total_sales,
     count(*)  AS Total_orders
 FROM retail_sales
