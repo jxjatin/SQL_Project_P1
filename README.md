@@ -215,7 +215,7 @@ This project is part of my portfolio, showcasing the SQL skills essential for da
 
 For more content on SQL, data analysis, and other data-related topics, make sure to follow me on social media and join our community:
 
-- **LinkedIn**: [Connect with me professionally](www.linkedin.com/in/jatinthakur2004)
+- **LinkedIn**: [Connect with me professionally](#www.linkedin.com/in/jatinthakur2004)
 - **Discord**: [Connect with me on discord ](https://discord.com/channels/@me/1277548719750909982)
 
 Thank you for your support, and I look forward to connecting with you!
